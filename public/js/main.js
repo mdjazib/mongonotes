@@ -1,3 +1,3 @@
-window.onbeforeunload = async () => {
-    await fetch('/destroy', { method: 'GET' });
-}
+window.addEventListener('unload', () => {
+    navigator.sendBeacon('/destroy');
+});
