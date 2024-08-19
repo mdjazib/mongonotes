@@ -239,4 +239,48 @@ body {
   bottom: 20px;
   text-decoration: none;
   right: 0;
+}
+@media (max-width: 1000px) {
+  .mongonotes-manager {
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 0px;
+  }
+  .mongonotes-manager::-webkit-scrollbar {
+    height: 0;
+  }
+  .mongonotes-manager .mongocol {
+    min-width: 100vw !important;
+    scroll-snap-align: center;
+    height: 100% !important;
+  }
+  .mongonotes-manager .mongocol .mongodb {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .mongonotes-manager .mongocol:nth-last-child(1) {
+    min-width: 100vw !important;
+    padding: 0 5px;
+  }
+}
+
+.swipe {
+  height: calc(100svh - 81.8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+}
+.swipe a {
+  color: white;
+  border: 1px solid white;
+  border-radius: 50px;
+  text-decoration: none;
+  padding: 14px 36px;
+  font-size: 14px;
+}
+.swipe p {
+  font-size: 12px;
+  color: white;
 }/*# sourceMappingURL=main.css.map */

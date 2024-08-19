@@ -16,28 +16,34 @@
                 <h2>Mongo Notes</h2>
             </div>
             <div class="mongodb">
-                <% notes.forEach(note=> { %>
-                    <div class="mongoread">
-                        <div class="readheader">
-                            <h2>
-                                <%= note.title %>
-                            </h2>
-                            <div class="actions">
-                                <a href="edit/<%= note.nid %>">Edit</a>
-                                <a href="/delete/<%= note.nid %>">Delete</a>
-                            </div>
-                        </div>
-                        <p>
-                            <%= note.description %>
-                        </p>
-                        <p>
-                            <%= note.createdAt %>
-                        </p>
+                <%if(notes.length===0){%>
+                    <div class="swipe">
+                        <a href="#write">Write Note</a>
+                        <p>Swipe right to write note</p>
                     </div>
-                    <% }); %>
+                    <%}%>
+                        <% notes.forEach(note=> { %>
+                            <div class="mongoread">
+                                <div class="readheader">
+                                    <h2>
+                                        <%= note.title %>
+                                    </h2>
+                                    <div class="actions">
+                                        <a href="edit/<%= note.nid %>">Edit</a>
+                                        <a href="/delete/<%= note.nid %>">Delete</a>
+                                    </div>
+                                </div>
+                                <p>
+                                    <%= note.description %>
+                                </p>
+                                <p>
+                                    <%= note.createdAt %>
+                                </p>
+                            </div>
+                            <% }); %>
             </div>
         </div>
-        <div class="mongocol">
+        <div class="mongocol" id="write">
             <div class="mongoheader">
                 <h2>
                     <%=username%>
