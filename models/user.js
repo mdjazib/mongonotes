@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect('mongodb://localhost:27017/mongonotes')
+mongoose.connect('mongodb+srv://mjxdex:uOibdIPthMiGLi89@cluster0.7aue8.mongodb.net/mongonotes?retryWrites=true&w=majority&appName=Cluster0')
 
 const Schema = mongoose.Schema;
 
