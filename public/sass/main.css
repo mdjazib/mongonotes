@@ -1,0 +1,242 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  height: 100svh;
+  background-color: #0b0b0b;
+}
+
+.authBody {
+  display: grid;
+  place-items: center;
+  height: inherit;
+}
+.authBody form {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 22rem;
+  border: 1px solid #191919;
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 1rem;
+}
+.authBody form h3 {
+  color: #e6e6e6;
+  font-weight: 100;
+}
+.authBody form p {
+  color: #b5b5b5;
+  font-size: 12px;
+}
+.authBody form input {
+  border-radius: inherit;
+  border: inherit;
+  background: transparent;
+  outline: none;
+  padding: inherit;
+  width: 100%;
+  color: #efefef;
+}
+.authBody form input[type=submit] {
+  transition: 0.2s ease;
+  color: #1593d2;
+  cursor: pointer;
+}
+.authBody form input[type=submit]:hover {
+  scale: 0.97;
+}
+.authBody form .error {
+  color: #f15;
+  font-size: 10px;
+}
+.authBody form a {
+  color: #1593d2;
+  font-size: 10px;
+  width: 100%;
+  text-decoration: none;
+  text-align: center;
+}
+.authBody form a:hover {
+  text-decoration: underline;
+}
+
+.mongonotes-manager {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 1px;
+  background-color: #191919;
+  height: 100svh;
+}
+.mongonotes-manager .mongocol {
+  background-color: #0b0b0b;
+  height: inherit;
+}
+.mongonotes-manager .mongocol:nth-child(1) {
+  width: 100%;
+}
+.mongonotes-manager .mongocol:nth-child(1) .itsmongonotes {
+  margin: 20px;
+}
+.mongonotes-manager .mongocol:nth-child(1) .itsmongonotes h2 {
+  color: #efefef;
+  font-size: 18px;
+  font-weight: 100;
+}
+.mongonotes-manager .mongocol:nth-child(1) .mongodb {
+  overflow-y: scroll;
+  display: grid;
+  max-height: calc(100svh - 62px);
+  gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0 20px 20px 20px;
+}
+.mongonotes-manager .mongocol:nth-child(1) .mongodb::-webkit-scrollbar {
+  width: 0;
+}
+.mongonotes-manager .mongocol:nth-child(1) .mongodb .mongoread {
+  background-color: #191919;
+  border-radius: 10px;
+  width: 100%;
+}
+.mongonotes-manager .mongocol:nth-child(1) .mongodb .mongoread .readheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 13px;
+  padding: 12px 13px;
+  border-bottom: 1px solid #0b0b0b;
+}
+.mongonotes-manager .mongocol:nth-child(1) .mongodb .mongoread .readheader h2 {
+  color: #efefef;
+  font-weight: 100;
+  font-size: 14px;
+}
+.mongonotes-manager .mongocol:nth-child(1) .mongodb .mongoread .readheader .actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+}
+.mongonotes-manager .mongocol:nth-child(1) .mongodb .mongoread .readheader .actions a {
+  transition: 0.2s ease;
+  text-decoration: none;
+  font-size: 10px;
+}
+.mongonotes-manager .mongocol:nth-child(1) .mongodb .mongoread .readheader .actions a:nth-child(1) {
+  color: #1593d2;
+}
+.mongonotes-manager .mongocol:nth-child(1) .mongodb .mongoread .readheader .actions a:nth-last-child(1) {
+  color: #f15;
+}
+.mongonotes-manager .mongocol:nth-child(1) .mongodb .mongoread .readheader .actions a:hover {
+  color: white;
+}
+.mongonotes-manager .mongocol:nth-child(1) .mongodb .mongoread p {
+  color: #cfcfcf;
+  padding: 15px;
+  font-size: 12px;
+}
+.mongonotes-manager .mongocol:nth-child(1) .mongodb .mongoread p:nth-last-child(1) {
+  font-size: 8px;
+  padding: 0 15px 15px 15px;
+  color: #848484;
+}
+.mongonotes-manager .mongocol:nth-last-child(1) {
+  min-width: 30rem;
+  position: relative;
+}
+.mongonotes-manager .mongocol:nth-last-child(1) .mongoheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+  border: 1px solid #191919;
+  border-radius: 10px;
+  padding: 14px 20px;
+  margin: 20px;
+}
+.mongonotes-manager .mongocol:nth-last-child(1) .mongoheader h2 {
+  color: #e6e6e6;
+  font-weight: 100;
+  font-size: 14px;
+}
+.mongonotes-manager .mongocol:nth-last-child(1) .mongoheader a {
+  transition: 0.1s ease;
+  text-decoration: none;
+  color: #f15;
+  border: 1px solid #f15;
+  font-size: 10px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.mongonotes-manager .mongocol:nth-last-child(1) .mongoheader a:hover {
+  background-color: #f15;
+  color: #0b0b0b;
+}
+.mongonotes-manager .mongocol:nth-last-child(1) form {
+  margin: 40px 20px 20px 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 15px;
+}
+.mongonotes-manager .mongocol:nth-last-child(1) form h2 {
+  color: #e6e6e6;
+  font-weight: 100;
+  font-size: 16px;
+}
+.mongonotes-manager .mongocol:nth-last-child(1) form input, .mongonotes-manager .mongocol:nth-last-child(1) form textarea, .mongonotes-manager .mongocol:nth-last-child(1) form a {
+  width: 100%;
+  border: 1px solid #191919;
+  border-radius: 10px;
+  padding: 15px 13px;
+  background-color: transparent;
+  outline: none;
+  color: #e6e6e6;
+}
+.mongonotes-manager .mongocol:nth-last-child(1) form input[type=submit], .mongonotes-manager .mongocol:nth-last-child(1) form textarea[type=submit], .mongonotes-manager .mongocol:nth-last-child(1) form a[type=submit] {
+  transition: 0.2s ease;
+  color: #1593d2;
+  cursor: pointer;
+}
+.mongonotes-manager .mongocol:nth-last-child(1) form input[type=submit]:hover, .mongonotes-manager .mongocol:nth-last-child(1) form textarea[type=submit]:hover, .mongonotes-manager .mongocol:nth-last-child(1) form a[type=submit]:hover {
+  scale: 0.97;
+}
+.mongonotes-manager .mongocol:nth-last-child(1) form textarea {
+  resize: none;
+  height: 40svh;
+}
+.mongonotes-manager .mongocol:nth-last-child(1) form a {
+  transition: 0.2s ease;
+  color: #efefef;
+  text-decoration: none;
+  text-align: center;
+  font-size: 12px;
+}
+.mongonotes-manager .mongocol:nth-last-child(1) form a:hover {
+  scale: 0.97;
+}
+.mongonotes-manager .mongocol:nth-last-child(1) .author {
+  color: #c6c6c6;
+  font-size: 8px;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 20px;
+  text-decoration: none;
+  right: 0;
+}/*# sourceMappingURL=main.css.map */

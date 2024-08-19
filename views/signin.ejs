@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MongoNotes - Sign in</title>
+    <link rel="stylesheet" href="./../sass/main.css">
+    <script src="./js/main.js"></script>
+</head>
+
+<body>
+    <div class="authBody">
+        <form action="signin" method="post">
+            <h3>Welcome Back</h3>
+            <p>A private and secure library for your words and bits.</p>
+            <% if(usernameerror){ %>
+                <div class="error">*No account found on this email!</div>
+                <%}%>
+                    <input type="text" placeholder="Email" name="email" value="<%= email %>" required>
+                    <% if(passworderror){ %>
+                        <div class="error">*Incorrect password!</div>
+                        <%}%>
+                            <input type="text" placeholder="Password" name="password" required>
+                            <input type="submit">
+                            <a href="/registration">Don't have an account?</a>
+        </form>
+    </div>
+</body>
+
+</html>

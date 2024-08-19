@@ -1,0 +1,178 @@
+@mixin flex($j,$a,$d,$g)
+    display: flex
+    justify-content: $j
+    align-items: $a
+    flex-direction: $d
+    gap: $g
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    font-family: Arial, Helvetica, sans-serif
+body
+    height: 100svh
+    background-color: #0b0b0b
+.authBody
+    display: grid
+    place-items: center
+    height: inherit
+    form
+        @include flex(flex-start,flex-start,column,10px)
+        max-width: 22rem
+        border: 1px solid #191919
+        border-radius: 6px
+        padding: 1rem
+        margin: 1rem
+        h3
+            color: #e6e6e6
+            font-weight: 100
+        p
+            color: #b5b5b5
+            font-size: 12px
+        input
+            border-radius: inherit
+            border: inherit
+            background: transparent
+            outline: none
+            padding: inherit
+            width: 100%
+            color: #efefef
+            &[type=submit]
+                transition: .2s ease
+                color: #1593d2
+                cursor: pointer
+                &:hover
+                    scale: 0.97
+        .error
+            color: #f15
+            font-size: 10px
+        a
+            color: #1593d2
+            font-size: 10px
+            width: 100%
+            text-decoration: none
+            text-align: center
+            &:hover
+                text-decoration: underline
+.mongonotes-manager
+    @include flex(space-between,center,row,1px)
+    background-color: #191919
+    height: 100svh
+    .mongocol
+        background-color: #0b0b0b
+        height: inherit
+        &:nth-child(1)
+            width: 100%
+            .itsmongonotes
+                margin: 20px
+                h2
+                    color: #efefef
+                    font-size: 18px
+                    font-weight: 100
+            .mongodb
+                overflow-y: scroll
+                display: grid
+                max-height: calc( 100svh - 62px )
+                gap: 10px
+                grid-template-columns: repeat(2,1fr)
+                padding: 0 20px 20px 20px
+                &::-webkit-scrollbar
+                    width: 0
+                .mongoread
+                    background-color: #191919
+                    border-radius: 10px
+                    width: 100%
+                    .readheader
+                        @include flex(space-between,center,row,13px)
+                        padding: 12px 13px
+                        border-bottom: 1px solid #0b0b0b
+                        h2
+                            color: #efefef
+                            font-weight: 100
+                            font-size: 14px
+                        .actions
+                            @include flex(center,center,row,10px)
+                            a
+                                transition: .2s ease
+                                text-decoration: none
+                                font-size: 10px
+                                &:nth-child(1)
+                                    color: #1593d2
+                                &:nth-last-child(1)
+                                    color: #f15
+                                &:hover
+                                    color: white
+                    p
+                        color: #cfcfcf
+                        padding: 15px
+                        font-size: 12px
+                        &:nth-last-child(1)
+                            font-size: 8px
+                            padding: 0 15px 15px 15px
+                            color: #848484
+        &:nth-last-child(1)
+            min-width: 30rem
+            position: relative
+            .mongoheader
+                @include flex(space-between,center,row,0)
+                border: 1px solid #191919
+                border-radius: 10px
+                padding: 14px 20px
+                margin: 20px
+                h2
+                    color: #e6e6e6
+                    font-weight: 100
+                    font-size: 14px
+                a
+                    transition: .1s ease
+                    text-decoration: none
+                    color: #f15
+                    border: 1px solid #f15
+                    font-size: 10px
+                    padding: 6px 10px
+                    border-radius: 6px
+                    cursor: pointer
+                    &:hover
+                        background-color: #f15
+                        color: #0b0b0b
+            form
+                margin: 40px 20px 20px 20px
+                @include flex(flex-start,flex-start,column,15px)
+                h2
+                    color: #e6e6e6
+                    font-weight: 100
+                    font-size: 16px
+                input,textarea,a
+                    width: 100%
+                    border: 1px solid #191919
+                    border-radius: 10px
+                    padding: 15px 13px
+                    background-color: transparent
+                    outline: none
+                    color: #e6e6e6
+                    &[type=submit]
+                        transition: .2s ease
+                        color: #1593d2
+                        cursor: pointer
+                        &:hover
+                            scale: 0.97
+                textarea
+                    resize: none
+                    height: 40svh
+                a
+                    transition: .2s ease
+                    color: #efefef
+                    text-decoration: none
+                    text-align: center
+                    font-size: 12px
+                    &:hover
+                        scale: 0.97
+            .author
+                color: #c6c6c6
+                font-size: 8px
+                width: 100%
+                text-align: center
+                position: absolute
+                bottom: 20px
+                text-decoration: none
+                right: 0

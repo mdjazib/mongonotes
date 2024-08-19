@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mongo Notes</title>
+    <link rel="stylesheet" href="./../sass/main.css">
+    <script src="./js/main.js"></script>
+</head>
+
+<body>
+    <div class="mongonotes-manager">
+        <div class="mongocol">
+            <div class="itsmongonotes">
+                <h2>Mongo Notes</h2>
+            </div>
+            <div class="mongodb">
+                <% notes.forEach(note=> { %>
+                    <div class="mongoread">
+                        <div class="readheader">
+                            <h2>
+                                <%= note.title %>
+                            </h2>
+                            <div class="actions">
+                                <a href="edit/<%= note.nid %>">Edit</a>
+                                <a href="/delete/<%= note.nid %>">Delete</a>
+                            </div>
+                        </div>
+                        <p>
+                            <%= note.description %>
+                        </p>
+                        <p>
+                            <%= note.createdAt %>
+                        </p>
+                    </div>
+                    <% }); %>
+            </div>
+        </div>
+        <div class="mongocol">
+            <div class="mongoheader">
+                <h2>
+                    <%=username%>
+                </h2>
+                <a href="/logout">Log out</a>
+            </div>
+            <%if(edit){%>
+                <form action="/edit/<%=notes[0].nid%>" method="post">
+                    <h2>Update Note</h2>
+                    <input type="text" required placeholder="Title" name="title" value="<%=notes[0].title%>">
+                    <textarea name="description" required
+                        placeholder="Update your note..."><%=notes[0].description%></textarea>
+                    <input type="submit" value="Save changes">
+                    <a href="/">View all notes</a>
+                </form>
+                <%}else{%>
+                    <form action="/" method="post">
+                        <h2>Write Note</h2>
+                        <input type="text" required placeholder="Title" name="title">
+                        <textarea name="description" required
+                            placeholder="Write about your day or something..."></textarea>
+                        <input type="submit" value="Create note">
+                    </form>
+                    <%}%>
+                        <a href="https:instagram.com/itxmuhammadjazib" target="_blank" class="author">Crafted by:
+                            Muhammad Jazib</a>
+        </div>
+    </div>
+</body>
+
+</html>
